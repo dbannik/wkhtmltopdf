@@ -2,7 +2,7 @@
 
 set -e
 
-dpkg --add-architecture amd64 \
+sudo dpkg --add-architecture amd64 \
     && apt update \
     && apt install -y libc6:amd64 libxrender1:amd64 libfontconfig1:amd64 libxi6:amd64 libstdc++6:amd64 qemu-user-static --no-install-recommends \
     && mkdir /tmp/qemu-amd64 \
