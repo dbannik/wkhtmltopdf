@@ -12,6 +12,7 @@ sudo dpkg --add-architecture amd64 \
     && rm -rf /var/lib/apt/lists/* /tmp/qemu-amd64
 
 curl -L https://github.com/h4cc/wkhtmltoimage-amd64/raw/refs/tags/0.12.4/bin/wkhtmltoimage-amd64 -o /usr/local/bin/wkhtmltoimage-amd64
+echo "8394238a0831ee5dcf26e82de36bbd51193a08629252bdb93bd86798e1660007  /usr/local/bin/wkhtmltoimage-amd64" | sha256sum -c - || rm /usr/local/bin/wkhtmltoimage-amd64
 
 cat > /usr/local/bin/wkhtmltoimage <<'EOF'
 #!/usr/bin/env bash

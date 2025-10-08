@@ -12,6 +12,7 @@ sudo dpkg --add-architecture amd64 \
     && rm -rf /var/lib/apt/lists/* /tmp/qemu-amd64
 
 curl -L https://github.com/h4cc/wkhtmltopdf-amd64/raw/refs/tags/0.12.4/bin/wkhtmltopdf-amd64 -o /usr/local/bin/wkhtmltopdf-amd64
+echo "840e3b30668af203dc685986db7ace92a5495d70d0c76ba13045b2aad24e201b  /usr/local/bin/wkhtmltopdf-amd64" | sha256sum -c - || rm /usr/local/bin/wkhtmltopdf-amd64
 
 cat > /usr/local/bin/wkhtmltopdf <<'EOF'
 #!/usr/bin/env bash
